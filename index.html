@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Calculator</h1>
+
+  <!-- top buttons -->
+  <div class="top-bar">
+    <button type="button" id="btnDegRad">DEG</button>
+    <button type="button" id="btnTheme">Dark Mode</button>
+    <button type="button" id="btnHistory">History</button>
+  </div>
+
+  <!-- calculator box -->
+  <div class="calculator-box">
+    <p id="memoryText" class="memory-text"></p>
+    <input type="text" id="screen" class="screen" readonly value="0">
+    <p id="resultText" class="result-text"></p>
+    <p id="errorText" class="error-text"></p>
+
+    <div class="buttons">
+      <!-- memory row -->
+      <button class="btn btn-gray" data-val="MC">MC</button>
+      <button class="btn btn-gray" data-val="MR">MR</button>
+      <button class="btn btn-gray" data-val="M+">M+</button>
+      <button class="btn btn-gray" data-val="M-">M-</button>
+      <button class="btn btn-gray" data-val="MS">MS</button>
+
+      <!-- scientific row 1 -->
+      <button class="btn btn-sci" data-val="sin(">sin</button>
+      <button class="btn btn-sci" data-val="cos(">cos</button>
+      <button class="btn btn-sci" data-val="tan(">tan</button>
+      <button class="btn btn-sci" data-val="log(">log</button>
+      <button class="btn btn-sci" data-val="ln(">ln</button>
+
+      <!-- scientific row 2 -->
+      <button class="btn btn-sci" data-val="sqrt(">sqrt</button>
+      <button class="btn btn-sci" data-val="^2">x²</button>
+      <button class="btn btn-sci" data-val="^3">x³</button>
+      <button class="btn btn-sci" data-val="^">x^y</button>
+      <button class="btn btn-sci" data-val="!">n!</button>
+
+      <!-- scientific row 3 -->
+      <button class="btn btn-sci" data-val="3.14159265359">π</button>
+      <button class="btn btn-sci" data-val="2.71828182846">e</button>
+      <button class="btn btn-sci" data-val="rand">Rand</button>
+      <button class="btn btn-sci" data-val="(">(</button>
+      <button class="btn btn-sci" data-val=")">)</button>
+
+      <!-- clear row -->
+      <button class="btn btn-orange" data-val="AC">AC</button>
+      <button class="btn btn-orange" data-val="DEL">DEL</button>
+      <button class="btn btn-orange" data-val="%">%</button>
+      <button class="btn btn-orange" data-val="+">+</button>
+      <button class="btn btn-orange" data-val="-">-</button>
+
+      <!-- numbers -->
+      <button class="btn" data-val="7">7</button>
+      <button class="btn" data-val="8">8</button>
+      <button class="btn" data-val="9">9</button>
+      <button class="btn btn-orange" data-val="*">×</button>
+      <button class="btn btn-orange" data-val="/">÷</button>
+
+      <button class="btn" data-val="4">4</button>
+      <button class="btn" data-val="5">5</button>
+      <button class="btn" data-val="6">6</button>
+      <button class="btn btn-orange" data-val="-">-</button>
+      <button class="btn btn-gray" data-val="+-">+/-</button>
+
+      <button class="btn" data-val="1">1</button>
+      <button class="btn" data-val="2">2</button>
+      <button class="btn" data-val="3">3</button>
+      <button class="btn btn-orange" data-val="+">+</button>
+      <button class="btn btn-gray" data-val="Ans">Ans</button>
+
+      <button class="btn btn-wide" data-val="0">0</button>
+      <button class="btn" data-val=".">.</button>
+      <button class="btn btn-green btn-equals" data-val="=">=</button>
+    </div>
+  </div>
+
+  <p class="note">Tip: You can also use keyboard numbers and + - * / Enter Backspace</p>
+  </div>
+
+  <!-- history panel -->
+  <div id="historyBox" class="history-box">
+    <div class="history-top">
+      <h2>Calculation History</h2>
+      <button type="button" id="btnCloseHistory">Close</button>
+    </div>
+    <button type="button" id="btnClearHistory" class="clear-history-btn">Clear All History</button>
+    <ul id="historyList"></ul>
+    <p id="noHistory" class="no-history">No history saved yet.</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

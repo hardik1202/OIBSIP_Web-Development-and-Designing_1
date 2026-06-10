@@ -1,0 +1,258 @@
+/* Simple CSS for Calculator mini project */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #222;
+  padding: 20px;
+}
+
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #eee;
+}
+
+.container {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.top-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  justify-content: center;
+}
+
+.top-bar button {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+body.dark-mode .top-bar button {
+  background: #333;
+  color: #fff;
+  border-color: #555;
+}
+
+.calculator-box {
+  background: #fff;
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 3px 3px 10px #ccc;
+}
+
+body.dark-mode .calculator-box {
+  background: #2b2b2b;
+  border-color: #666;
+  box-shadow: 3px 3px 10px #000;
+}
+
+.memory-text {
+  font-size: 12px;
+  color: blue;
+  min-height: 16px;
+}
+
+.screen {
+  width: 100%;
+  height: 50px;
+  font-size: 22px;
+  text-align: right;
+  padding: 8px;
+  margin-bottom: 5px;
+  border: 1px solid #999;
+  background: #fafafa;
+}
+
+body.dark-mode .screen {
+  background: #111;
+  color: #fff;
+  border-color: #555;
+}
+
+.result-text {
+  text-align: right;
+  font-size: 18px;
+  color: green;
+  min-height: 24px;
+  margin-bottom: 5px;
+}
+
+.error-text {
+  text-align: center;
+  color: red;
+  font-size: 14px;
+  min-height: 18px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.btn {
+  padding: 12px 5px;
+  font-size: 15px;
+  border: 1px solid #bbb;
+  background: #e8e8e8;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background: #d0d0d0;
+}
+
+.btn:active {
+  background: #bbb;
+}
+
+body.dark-mode .btn {
+  background: #444;
+  color: #fff;
+  border-color: #666;
+}
+
+.btn-orange {
+  background: #ffb366;
+}
+
+.btn-green {
+  background: #90ee90;
+  font-weight: bold;
+}
+
+.btn-gray {
+  background: #d3d3d3;
+  font-size: 13px;
+}
+
+.btn-sci {
+  background: #b3d9ff;
+  font-size: 13px;
+}
+
+.btn-wide {
+  grid-column: span 2;
+}
+
+.btn-equals {
+  grid-column: span 2;
+}
+
+.note {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 15px;
+  color: #555;
+}
+
+/* history side box */
+.history-box {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100%;
+  background: #fff;
+  border-left: 2px solid #333;
+  padding: 15px;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+body.dark-mode .history-box {
+  background: #2b2b2b;
+  border-color: #666;
+}
+
+.history-box.show {
+  display: block;
+}
+
+.history-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.history-top h2 {
+  font-size: 18px;
+}
+
+.clear-history-btn {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  background: #ffcccc;
+  border: 1px solid red;
+  cursor: pointer;
+}
+
+#historyList {
+  list-style: none;
+}
+
+#historyList li {
+  border: 1px solid #ccc;
+  padding: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  position: relative;
+}
+
+#historyList li:hover {
+  background: #f5f5f5;
+}
+
+body.dark-mode #historyList li:hover {
+  background: #3a3a3a;
+}
+
+#historyList li .delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 2px 6px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.no-history {
+  text-align: center;
+  color: #888;
+  font-size: 14px;
+}
+
+/* mobile */
+@media (max-width: 400px) {
+  .btn {
+    font-size: 12px;
+    padding: 10px 3px;
+  }
+}
